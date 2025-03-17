@@ -12,7 +12,7 @@ export default function login() {
                 <FontAwesome5 name="fire" size={42} color={COLORS.primary} />
             </View>
             <Text style={styles.appName}>Dropgram</Text>
-            <Text style={styles. tagline}>Cuba</Text>
+            <Text style={styles. tagline}>Meril Ranjan Lamahewa</Text>
         </View>
 
     </View>
