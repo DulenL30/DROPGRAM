@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 20,
+    marginTop: 50, 
   },
   appName: {
     fontSize: 42,
@@ -33,9 +34,9 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: COLORS.grey,
     letterSpacing: 1,
-    textTransform: "lowercase",
+    //textTransform: "lowercase",
   },
-  illustrationContainer: {
+  /*illustrationContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
@@ -45,7 +46,7 @@ export const styles = StyleSheet.create({
     width: width * 0.75,
     height: width * 0.75,
     maxHeight: 280,
-  },
+  },*/
   loginSection: {
     width: "100%",
     paddingHorizontal: 24,
@@ -61,6 +62,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     borderRadius: 14,
     marginBottom: 20,
+    marginTop: 300, 
     width: "100%",
     maxWidth: 300,
     shadowColor: "#000",
