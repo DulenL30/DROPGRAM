@@ -3,9 +3,33 @@ import { styles } from '@/styles/auth.styles';
 import { COLORS } from '@/constants/theme';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { Ionicons } from '@expo/vector-icons';
+import { useSSO } from '@clerk/clerk-expo';
+import { useRouter } from 'expo-router';
+
 
 
 export default function login() {
+  const{startSSOFlow} = useSSO()
+  const router = useRouter();
+  const handleGoogleSignIn = async () =>{
+
+    try{
+      const { createdSessionId, setActive } = await startSSOFlow({ strategy:"oauth_google" });
+
+
+      if (setActive && createdSessionId){
+        setActive({session: createdSessionId})
+        router.replace("/(tabs)")
+      }
+      
+
+    } catch (error){
+      console.error("OAuth error:", error)
+    }
+  };
+  
+  
+
   return (
     <View style={styles.container}>
         <View style={styles.brandSection}>
@@ -19,7 +43,7 @@ export default function login() {
         <View style={styles.loginSection}>
           <TouchableOpacity 
             style={styles.googleButton}
-            onPress={()=>console.log("Continue with Google")}
+            onPress={handleGoogleSignIn}
             activeOpacity={0.9}
           >
             <View style={styles.googleIconContainer}>
@@ -31,15 +55,6 @@ export default function login() {
           <Text style={styles.termsText}>By continuing, you agree to our Terms and Privacy Policy.</Text>
         </View>
 
-
-
-
     </View>
   )
 }
-
-
-
-
-
-
