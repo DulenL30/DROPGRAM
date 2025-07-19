@@ -1,50 +1,85 @@
-# Welcome to your Expo app 👋
+# DROPGRAM
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Dropgram** is a modern React Native app built with Clerk authentication and Google OAuth integration. Designed for seamless sharing and secure access, it features file-based routing with Expo Router and a clean TypeScript codebase.
 
-## Get started
+## 🚀 Get started
 
 1. Install dependencies
-
    ```bash
    npm install
    ```
 
 2. Start the app
-
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## 🔧 Project Structure
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+Dropgram/
+├── .expo/              # Expo development files
+├── types/              # TypeScript type definitions
+├── .vscode/            # VS Code settings and extensions
+├── app/                # Expo Router app directory
+│   ├── (auth)/         # Authentication screens group
+│   ├── (tabs)/         # Tab-based navigation screens
+│   ├── _layout.tsx     # Root layout component
+│   └── index.tsx       # Home/landing screen
+├── assets/             # Static assets
+│   └── fonts/          # Custom fonts
+├── components/         # Reusable UI components
+│   └── initialLayout.tsx
+├── constants/          # App constants and configuration
+│   └── theme.ts        # Theme and styling constants
+├── styles/             # Global styles
+│   └── auth.styles.ts  # Authentication-specific styles
+├── app.json           # Expo app configuration
+├── tsconfig.json      # TypeScript configuration
+├── expo-env.d.ts      # Expo TypeScript environment
+├── package.json       # Dependencies and scripts
+├── .env               # Environment variables (not in git)
+├── .gitignore         # Git ignore rules
+└── README.md          # Project documentation
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🚨 Troubleshooting
 
-## Learn more
+### Common Issues
 
-To learn more about developing your project with Expo, look at the following resources:
+**"Clerk not initialized" Error**
+- Ensure `.env` contains `EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY`
+- Restart the development server after adding environment variables
+- Check that your Clerk key is valid and active
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+**Expo Development Issues**
+```bash
+# Clear Expo cache
+npm start -- --clear
 
-## Join the community
+# Reset Metro bundler cache
+npx expo start --clear
+```
 
-Join our community of developers creating universal apps.
+**Authentication Problems**
+- Verify Google OAuth is enabled in Clerk Dashboard
+- Check redirect URLs match your development/production domains
+- Ensure your app is using the correct Clerk environment (development vs production)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Clean and reinstall dependencies**
+```bash
+# Clean and reinstall dependencies
+rm -rf node_modules package-lock.json
+npm install
+
+# Clear Expo cache
+expo doctor
+```
+
+## 🔒 Security
+
+- Never commit `.env` or any files containing sensitive keys
+- Use Clerk's test keys for development
+- Regularly update dependencies to patch security vulnerabilities
+- Report security issues privately via email
+
