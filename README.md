@@ -2,18 +2,52 @@
 
 **Dropgram** is a modern React Native app built with Clerk authentication and Google OAuth integration. Designed for seamless sharing and secure access, it features file-based routing with Expo Router and a clean TypeScript codebase.
 
+<img width="1024" height="712" alt="Screenshot 2025-07-31 at 13 48 15" src="https://github.com/user-attachments/assets/de8df046-8a7a-4916-852e-92b9ecee3416" />
+
+## ✨ Features
+
+-  **Secure Authentication** - Powered by Clerk with Google OAuth
+-  **Cross-Platform** - Built with React Native and Expo
+-  **Type-Safe** - Full TypeScript support
+-  **File-Based Routing** - Clean navigation with Expo Router
+-  **Modern UI** - Responsive design with custom theming
+-  **Performance Optimized** - Fast loading and smooth interactions
+
+
 ## 🚀 Get started
 
-1. Install dependencies
+1. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Start the app
+2. **Start the app**
    ```bash
    npx expo start
    ```
 
+3.**Run on your preferred platform**
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
+   - Scan the QR code with Expo Go app on your device
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React Native, Expo
+- **Language**: TypeScript
+- **Authentication**: Clerk, Google OAuth
+- **Navigation**: Expo Router
+- **Styling**: Custom theme system
+- **Development**: VS Code with configured extensions
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+- Expo CLI
+- iOS Simulator or Android Emulator (for testing)
+
+  
 ## 🔧 Project Structure
 
 ```
@@ -42,6 +76,7 @@ Dropgram/
 ├── .gitignore         # Git ignore rules
 └── README.md          # Project documentation
 ```
+
 
 ## 🚨 Troubleshooting
 
